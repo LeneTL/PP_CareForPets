@@ -3,7 +3,7 @@
     internal class Program
     {
         static List<Pet> pets;
-       
+        private static Pet chosenPet;
         
         static void Main(string[] args)
         {
@@ -27,11 +27,13 @@
             switch (input1)
             {
                 case "1":
-                    pets[0].CareForPet();
+                    chosenPet = pets[0];
+                    chosenPet.CareForPet();  // Katt
                     break;
 
                 case "2":
-                    pets[1].CareForPet();
+                    chosenPet = pets[1];
+                    chosenPet.CareForPet(); // Hund
                     break;
                 default:
                     Console.WriteLine("dette er ikke et input, velg 1 eller 2");

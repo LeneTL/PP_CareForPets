@@ -50,7 +50,7 @@ internal class Pet
                 //Metode for å gjøre glad
                 break;
             case "3":
-                //Metode for å 
+                //Metode for å gå tur
                 break;
             default:
                 Console.WriteLine("dette er ikke et input, velg 1,2 eller 3");
