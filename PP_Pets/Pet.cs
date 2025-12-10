@@ -1,15 +1,37 @@
-﻿namespace PP_Pets;
+﻿using System.Text.RegularExpressions;
+
+namespace PP_Pets;
 
 internal class Pet
 {
-    private List<Pet> _Pets;
+    public string Name { get; set; }
+    public string Hunger { get; set; }
+    public bool Happyness { get; set; }
 
-    public void addPet()
+    public string Walkies { get; set; } // toalett
+
+
+    public Pet(string name, string hunger, bool happyness, string walkies)
+    {
+        Name = name;
+        Hunger = hunger;
+        Happyness = happyness;
+        Walkies = walkies;
+    }
+
+    private List<Pet>
+
+    public static void addPet()
+    {
+        addPet();
+    }
+
+    public static void addPet(List<Pet> _Pets)
     {
         _Pets = [];
     }
 
-    public static void run()
+    public void run()
     {
         Console.WriteLine("Velg handling for kjøledyret");
         Console.WriteLine("""
@@ -18,6 +40,23 @@ internal class Pet
                           2. handling 2
                           3. handling 3
                           """);
+
+        var input = Console.ReadLine();
+        switch (input)
+        {
+            case "1":
+                addPet();
+                break;
+
+          //  case "2":
+
+
+        }
+
+
+
+
+
     }
     
 
