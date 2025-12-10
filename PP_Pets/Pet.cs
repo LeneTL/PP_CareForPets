@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Reflection.PortableExecutable;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace PP_Pets;
@@ -18,45 +19,86 @@ internal class Pet
         Happyness = happyness;
         Walkies = walkies;
     }
-    
-
-    //public static void addPet(List<Pet> _Pets)
-    //{
-    //    _Pets = [];
-    //}
-
-    
-
 
     public void CareForPet()   
     {
-
-
+        
         Console.WriteLine("Velg handling for kjæledyret");
         Console.WriteLine("""
                           CTRL + C to exit
                           1. Gi Mat
                           2. Kos med
                           3. Gå tur
+                          4. Si hadet
                           """);
         var input2 = Console.ReadLine();
         switch (input2)
         {
             case "1":
-                //metode til å skjekke om sulten / endre true/fasle på Hunger oi
+                GiveFood();
                 break;
 
             case "2":
                 //Metode for å gjøre glad
+                PetPet();
                 break;
             case "3":
                 //Metode for å gå tur
+                WalkPet();
+                break;
+            case "4":
+                //return to Main;
+                Program.Main();
                 break;
             default:
-                Console.WriteLine("dette er ikke et input, velg 1,2 eller 3");
+                Console.WriteLine("dette er ikke et input, velg 1,2,3 eller 4");
                 CareForPet();
                 break;
         }
     }
 
+    public void GiveFood()
+    {
+        if (Hunger)
+        {
+            Console.WriteLine($"Du mater {Name}");
+            Hunger = false;
+            Walkies = true;
+        }
+        else
+        {
+            Console.WriteLine($"{Name} er ikke sulten!");
+        }
+
+        CareForPet();
+    }
+
+    public void PetPet()
+    {
+        if (Happyness)
+        {
+            Console.WriteLine($"{Name} trenger ikke kos");
+        }
+        else
+        {
+            Console.WriteLine($"{Name} blir glad over kosen!");
+            Happyness = true;
+        }
+        CareForPet();
+    }
+
+    public void WalkPet()
+    {
+        if (Walkies)
+        {
+            Console.WriteLine($"{Name} trengte å gå tur");
+            Walkies = false;
+            Hunger = true;
+        }
+        else
+        {
+            Console.WriteLine($"{Name} vil ikke på tur!");
+        }
+        CareForPet();
+    }
 }

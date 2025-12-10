@@ -5,12 +5,12 @@
         static List<Pet> pets;
         private static Pet chosenPet;
         
-        static void Main(string[] args)
+        public static void Main()
         {
              pets = new List<Pet>
             {
-                new Pet("Cat", true, false, false),
-                new Pet("Dog", true, false, false),
+                new Pet("Kåre", true, false, false),
+                new Pet("Pål", true, false, false),
             };
             run();
         }
