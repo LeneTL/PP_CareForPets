@@ -18,65 +18,19 @@ internal class Pet
         Happyness = happyness;
         Walkies = walkies;
     }
-    void addPet()
-    {
-        List<Pet> pets = new List<Pet>();
-
-        Pet cat = new Pet("Cat", true, false, false);
-        Pet dog = new Pet("Dog", true, false, false);
-
-        pets.Add(cat);
-        pets.Add(dog);
-    }
+    
 
     //public static void addPet(List<Pet> _Pets)
     //{
     //    _Pets = [];
     //}
 
-    public void run()
+    
+
+
+    public void CareForPet()   
     {
-        Console.WriteLine("Velg et kjæledyr");
-        Console.WriteLine("""
-                          CTRL + C to exit
-                          1. Katt
-                          2. Hund
-                          """);
-        string input1 = Console.ReadLine();
-        switch (input1)
-            {
-                case "1":
-                    CareForPet(1);
-                    break;
 
-                case "2":
-                    CareForPet(2);
-                    break;
-                default: 
-                    Console.WriteLine("dette er ikke et input, velg 1 eller 2");
-                    run();
-                    break;
-            }
-        }
-    }
-
-
-    public static void CareForPet(int chosenPet)
-    {
-        addPet();
-
-        if (chosenPet == 1)
-        {
-            pets.cat;
-        }else if (chosenPet == 2)
-        {
-            var currentpet = pets.cat;
-        }
-        else
-        {
-            Console.WriteLine("dette er ikke et input, velg 1,2 eller 3");
-            CareForPet(chosenPet);
-        }
 
         Console.WriteLine("Velg handling for kjæledyret");
         Console.WriteLine("""
@@ -100,8 +54,9 @@ internal class Pet
                 break;
             default:
                 Console.WriteLine("dette er ikke et input, velg 1,2 eller 3");
-                run();
+                CareForPet();
                 break;
+        }
     }
 
 }
