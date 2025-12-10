@@ -18,9 +18,6 @@ internal class Pet
         Happyness = happyness;
         Walkies = walkies;
     }
-
-    private List<Pet>
-
     public static void addPet()
     {
         addPet();
