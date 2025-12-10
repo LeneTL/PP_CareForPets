@@ -5,7 +5,7 @@
         static List<Pet> pets;
         private static Pet chosenPet;
         
-        public static void Main()
+        static void Main()
         {
              pets = new List<Pet>
             {
@@ -14,8 +14,8 @@
             };
             run();
         }
-        
-        static void run()   
+
+        public static void run()   
         {
             Console.WriteLine("Velg et kjæledyr");
             Console.WriteLine("""

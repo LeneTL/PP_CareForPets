@@ -20,9 +20,9 @@ internal class Pet
         Walkies = walkies;
     }
 
-    public void CareForPet()   
+    public void CareForPet()
     {
-        
+
         Console.WriteLine("Velg handling for kjæledyret");
         Console.WriteLine("""
                           CTRL + C to exit
@@ -48,7 +48,7 @@ internal class Pet
                 break;
             case "4":
                 //return to Main;
-                Program.Main();
+                Program.run();
                 break;
             default:
                 Console.WriteLine("dette er ikke et input, velg 1,2,3 eller 4");
